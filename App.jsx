@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { createStackNavigator, NavigationContainer  } from '@react-navigation/native';
-import { AppProvider, useAppContext } from "./AppContext"; 
-import { ThemeProvider, useTheme } from './ThemeContext';
-
-// const Stack = createStackNavigator();
-
-
-function MainScreen () {
-  
-}
-
+import React from 'react';
+import { Text, View, TouchableOpacity, Image } from 'react-native';
+import styles from './styles';
 
 export default function App() {
   return (
-    <MainScreen />
+    <View style={styles.container}>
+      {/* Header Section */}
+      <View style={styles.header}>
+        <Image
+          source={require('./assets/Logo.png')}
+          style={styles.logo}
+        />
+        <Text style={styles.title}>G! Tara Na!</Text>
+        <Text style={styles.subtitle}>Harmony Unleashed: Your Ultimate Guide to Guitar Chords!</Text>
+        <TouchableOpacity style={styles.powerButton}>
+          <Text style={styles.powerText}>⏻</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Buttons Section */}
+      <View style={styles.buttonsContainer}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Major</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Minor</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 }
-
