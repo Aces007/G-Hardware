@@ -1,9 +1,15 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
+import { Image } from 'react-native';
+import styles from '../styles';
 
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
+       <Image
+          source={require('../assets/Logo.png')}
+          style={styles.logo}
+        />
       <Text style={styles.text}>Home Screen</Text>
       <Button
         title="Go to Major"
@@ -18,15 +24,3 @@ export default function HomeScreen({ navigation }) {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 16,
-  },
-});

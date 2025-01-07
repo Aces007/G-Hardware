@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
 import MajorScreen from './screens/MajorScreen';
 import MinorScreen from './screens/MinorScreen';
+import styles from './styles';
 
 const Stack = createNativeStackNavigator();
 
