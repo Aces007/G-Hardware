@@ -6,6 +6,7 @@ export default StyleSheet.create({
     backgroundColor: '#0A0D17',
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
   header: {
     position: 'absolute',
@@ -49,13 +50,14 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    margin: 20,
   },
   button: {
     backgroundColor: '#FFFFFF',
     borderRadius: 10,
-    paddingVertical: 40,
-    paddingHorizontal: 100,
-    marginVertical: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    marginHorizontal: 10,
     shadowColor: '#000',
     shadowOpacity: 0.2,
     shadowRadius: 5,
@@ -67,9 +69,10 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: '#000000',
   },
-
-  chordchart:{
+  chordchart: {
     height: 400,
     width: 204,
-  }
+    resizeMode: 'contain', // Ensures proper scaling of images
+    marginVertical: 20,
+  },
 });
