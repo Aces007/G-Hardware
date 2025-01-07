@@ -33,7 +33,7 @@ export default function ({ navigation }) {
 
       {/* Note Display */}
       <TouchableOpacity onPress={handleNoteClick}>
-        <Text style={[styles.title, { color: '#00FF00', fontSize: 250, marginVertical: 20 }]}>
+        <Text style={[styles.title, { color: '#A8F94F', fontSize: 250, marginVertical: 20 }]}>
           {currentNote}
         </Text>
       </TouchableOpacity>
