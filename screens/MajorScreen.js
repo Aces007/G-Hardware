@@ -11,6 +11,12 @@ export default function ({ navigation }) {
               />
               <Text style={styles.title}>G! Tara Na!</Text>
               <Text style={styles.subtitle}>Harmony Unleashed: Your Ultimate Guide to Guitar Chords!</Text>
+
+      <Image
+        source={require('../assets/chords/majors/A Major.png')}
+        style={styles.chordchart}
+      />
+
       <Button
         title="Go to Home"
         onPress={() => navigation.navigate('Home')}

@@ -67,4 +67,9 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: '#000000',
   },
+
+  chordchart:{
+    height: 400,
+    width: 204,
+  }
 });
