@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
-import { Image } from 'react-native';
+import { View, Image, TouchableOpacity, Text, Button, StyleSheet } from 'react-native';
 import styles from '../styles';
 
 export default function HomeScreen({ navigation }) {
@@ -10,16 +9,26 @@ export default function HomeScreen({ navigation }) {
           source={require('../assets/Logo.png')}
           style={styles.logo}
         />
-      <Text style={styles.text}>Home Screen</Text>
-      <Button
-        title="Go to Major"
-        onPress={() => navigation.navigate('Major')}
-      />
+        <Text style={styles.title}>G! Tara Na!</Text>
+        <Text style={styles.subtitle}>Harmony Unleashed: Your Ultimate Guide to Guitar Chords!</Text>
 
-<Button
-        title="Go to Minor"
-        onPress={() => navigation.navigate('Minor')}
-      />
+        <View style={styles.buttonsContainer}>
+            {/* Major Button */}
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate('Major')}
+            >
+                <Text style={styles.buttonText}>Major</Text>
+            </TouchableOpacity>
+
+            {/* Minor Button */}
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate('Minor')}
+            >
+            <Text style={styles.buttonText}>Minor</Text>
+            </TouchableOpacity>
+        </View>
     </View>
   );
 }
