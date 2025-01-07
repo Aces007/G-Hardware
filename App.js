@@ -5,6 +5,7 @@ import HomeScreen from './screens/HomeScreen';
 import MajorScreen from './screens/MajorScreen';
 import MinorScreen from './screens/MinorScreen';
 import styles from './styles';
+import AScreen from './screens/AScreen'; // A Major screen
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,8 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Major" component={MajorScreen} />
         <Stack.Screen name="Minor" component={MinorScreen} />
+        <Stack.Screen name="AScreen" component={AScreen} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

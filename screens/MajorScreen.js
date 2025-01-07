@@ -14,6 +14,12 @@ export default function ({ navigation }) {
     setCurrentNoteIndex((prevIndex) => (prevIndex === notes.length - 1 ? 0 : prevIndex + 1));
   };
 
+  const handleNoteClick = () => {
+    if (notes[currentNoteIndex] === "A") {
+      navigation.navigate("AScreen"); // Navigate to AScreen when "A" is clicked
+    }
+  };
+
   const currentNote = notes[currentNoteIndex];
 
   return (
@@ -25,15 +31,18 @@ export default function ({ navigation }) {
       <Text style={styles.title}>G! Tara Na!</Text>
       <Text style={styles.subtitle}>Harmony Unleashed: Your Ultimate Guide to Guitar Chords!</Text>
 
+      {/* Note Display */}
+      <TouchableOpacity onPress={handleNoteClick}>
+        <Text style={[styles.title, { color: '#00FF00', fontSize: 250, marginVertical: 20 }]}>
+          {currentNote}
+        </Text>
+      </TouchableOpacity>
+
       {/* Navigation Buttons */}
       <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 20 }}>
         <TouchableOpacity onPress={handlePrev} style={styles.button}>
           <Text style={styles.buttonText}>{"<"}</Text>
         </TouchableOpacity>
-
-        <Text style={[styles.title, { color: '#00FF00', fontSize: 350, marginHorizontal: 20 }]}>
-          {currentNote}
-        </Text>
 
         <TouchableOpacity onPress={handleNext} style={styles.button}>
           <Text style={styles.buttonText}>{">"}</Text>
