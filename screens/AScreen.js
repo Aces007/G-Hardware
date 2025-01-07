@@ -21,12 +21,12 @@ export default function AScreen({ navigation }) {
 <View style={styles.button_container}>
       {/* Play Button */}
       <TouchableOpacity style={styles.button_circle} >
-        <Icon name="play" size={24} color="#0A0D17" />
+        <Icon name="play" size={24} color="#1E647E" />
       </TouchableOpacity>
 
       {/* Microphone Button */}
       <TouchableOpacity style={styles.button_circle} >
-        <Icon name="microphone" size={24} color="#0A0D17" />
+        <Icon name="microphone" size={24} color="#1E647E" />
       </TouchableOpacity>
     </View>
 

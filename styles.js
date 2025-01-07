@@ -85,7 +85,7 @@ export default StyleSheet.create({
     alignSelf: 'center',
   },
   button_circle: {
-    backgroundColor: '#6FFF4E',
+    backgroundColor: '#A8F94F',
     width: 60,
     height: 60,
     borderRadius: 30,
