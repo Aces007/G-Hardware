@@ -75,4 +75,26 @@ export default StyleSheet.create({
     resizeMode: 'contain', // Ensures proper scaling of images
     marginVertical: 20,
   },
+
+  button_container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 20,
+    width: '50%', // Adjust as needed
+    alignSelf: 'center',
+  },
+  button_circle: {
+    backgroundColor: '#6FFF4E',
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
+  },
 });
