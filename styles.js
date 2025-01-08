@@ -36,10 +36,60 @@ export default StyleSheet.create({
     textAlign: 'center',
     margin: 10,
   },
+
+  chordshapebuttons_container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 20,
+    width: '80%',
+  },
+
+  chordshapebutton: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    shadowOffset: { width: 0, height: 3 },
+    width: '100%',
+    margin: 20,
+  },
+
+  chordshape_buttonText: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: '#000',
+    textAlign: 'center',
+  },
+
+  buttonsContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 20,
+  },
+
+  buttonText: {
+    fontSize: 70,
+    fontWeight: 'bold',
+    color: '#ffff',
+    textAlign: 'center',
+  },
+
   chordchart: {
     height: '40%',
-    resizeMode: 'contain',
+    resizeMode: 'contain', // Ensures proper scaling of images
   },
+
+  carousel_container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '80%',
+  },
+  
   button_circle_container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
