@@ -16,7 +16,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Major" component={MajorScreen} />
         <Stack.Screen name="Minor" component={MinorScreen} />
-        <Stack.Screen name="AScreen" component={AScreen} />
+        <Stack.Screen name="A Major" component={AScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>

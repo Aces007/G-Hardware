@@ -12,21 +12,21 @@ export default function HomeScreen({ navigation }) {
         <Text style={styles.title}>G! Tara Na!</Text>
         <Text style={styles.subtitle}>Harmony Unleashed: Your Ultimate Guide to Guitar Chords!</Text>
 
-        <View style={styles.buttonsContainer}>
+        <View style={styles.chordshapebuttons_container}>
             {/* Major Button */}
             <TouchableOpacity
-                style={styles.button}
+                style={styles.chordshapebutton}
                 onPress={() => navigation.navigate('Major')}
             >
-                <Text style={styles.buttonText}>Major</Text>
+                <Text style={styles.chordshape_buttonText}>Major</Text>
             </TouchableOpacity>
 
             {/* Minor Button */}
             <TouchableOpacity
-                style={styles.button}
+                style={styles.chordshapebutton}
                 onPress={() => navigation.navigate('Minor')}
             >
-            <Text style={styles.buttonText}>Minor</Text>
+            <Text style={styles.chordshape_buttonText}>Minor</Text>
             </TouchableOpacity>
         </View>
     </View>

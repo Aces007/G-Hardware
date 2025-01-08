@@ -6,13 +6,13 @@ export default StyleSheet.create({
     backgroundColor: '#0A0D17',
     alignItems: 'center',
     justifyContent: 'center',
-    
   },
-  header: {
+  header_container: {
     position: 'absolute',
-    top: 50,
+    top: 0,
     alignItems: 'center',
-    width: '90%',
+    width: '100%',
+    zIndex: 1,
   },
   logo: {
     width: 100,
@@ -30,59 +30,75 @@ export default StyleSheet.create({
     textAlign: 'center',
     marginBottom: 20,
   },
-  powerButton: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    backgroundColor: '#FF3B3B',
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+  p: {
+    fontSize: 25,
+    color: '#CCCCCC',
+    textAlign: 'center',
+    margin: 10,
+  },
+
+  chordshapebuttons_container: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    margin: 20,
+    width: '80%',
   },
-  powerText: {
-    color: '#FFFFFF',
-    fontSize: 18,
+
+  chordshapebutton: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    shadowOffset: { width: 0, height: 3 },
+    width: '100%',
+    margin: 20,
+  },
+
+  chordshape_buttonText: {
+    fontSize: 40,
     fontWeight: 'bold',
+    color: '#000',
+    textAlign: 'center',
   },
+
   buttonsContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     margin: 20,
   },
-  button: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    marginHorizontal: 10,
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
-    shadowOffset: { width: 0, height: 3 },
-    elevation: 5,
-  },
+
   buttonText: {
-    fontSize: 18,
+    fontSize: 70,
     fontWeight: 'bold',
-    color: '#000000',
-  },
-  chordchart: {
-    height: 400,
-    width: 204,
-    resizeMode: 'contain', // Ensures proper scaling of images
-    marginVertical: 20,
+    color: '#ffff',
+    textAlign: 'center',
   },
 
-  button_container: {
+  chordchart: {
+    height: '40%',
+    resizeMode: 'contain', // Ensures proper scaling of images
+  },
+
+  carousel_container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '80%',
+  },
+  
+  button_circle_container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 20,
-    width: '50%', // Adjust as needed
+    width: '50%',
     alignSelf: 'center',
+    position: 'absolute',
+    bottom: 0,
+    marginBottom: 50,
   },
   button_circle: {
     backgroundColor: '#A8F94F',
@@ -91,10 +107,15 @@ export default StyleSheet.create({
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    elevation: 5,
+    zIndex: 1, // Keep mic button above the pulse
+  },
+  pulse_circle: {
+    position: 'absolute',
+    backgroundColor: '#53a5c5',
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    opacity: 0.5,
+    zIndex: 0, // Pulse effect below the button
   },
 });
