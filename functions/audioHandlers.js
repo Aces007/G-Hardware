@@ -1,36 +1,19 @@
-import { Audio } from 'expo-av';
+import Sound from 'react-native-sound';
 
-let sound;
-
-export const handleAudioPlayback = async (isPlaying, setIsPlaying) => {
-  try {
-    if (isPlaying) {
-      // Pause the audio if it's currently playing
-      if (sound) {
-        await sound.pauseAsync();
-      }
-      return false;
-    } else {
-      if (!sound) {
-        // Load the audio file if not already loaded
-        sound = new Audio.Sound();
-        await sound.loadAsync(require('../assets/audio/major/A_Major.mp3')); // Replace with your actual wav file path
-      }
-
-      // Play the audio
-      await sound.playAsync();
-
-      // Reset play state when the audio finishes
-      sound.setOnPlaybackStatusUpdate((status) => {
-        if (status.didJustFinish) {
-          setIsPlaying(false);
-        }
-      });
-
-      return true;
+export const playSound = () => {
+  Sound.setCategory('Playback');
+  const sound = new Sound(require('../assets/audio/major/A_Major.mp3'), (error) => {
+    if (error) {
+      console.error('Failed to load the sound', error);
+      return;
     }
-  } catch (error) {
-    console.error('Error handling audio playback:', error);
-    return false;
-  }
+    sound.play((success) => {
+      if (success) {
+        console.log('Sound played successfully');
+      } else {
+        console.error('Sound playback failed');
+      }
+      sound.release();
+    });
+  });
 };
