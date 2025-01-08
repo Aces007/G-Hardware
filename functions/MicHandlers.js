@@ -3,16 +3,16 @@ import { Animated } from 'react-native';
 
 export function useMicAnimation() {
   const micScaleAnim = useRef(new Animated.Value(1)).current;
-  const micOpacityAnim = useRef(new Animated.Value(0)).current;
   const [micVisible, setMicVisible] = useState(false);
 
   const handleMicPress = () => {
     if (micVisible) {
       // Stop animation
-      Animated.timing(micOpacityAnim).stop();
+      Animated.timing(micScaleAnim).stop();
+      micScaleAnim.setValue(1); // Reset animation scale
       setMicVisible(false);
     } else {
-      // Start pulse animation
+      // Start animation
       setMicVisible(true);
       Animated.loop(
         Animated.sequence([
@@ -21,8 +21,8 @@ export function useMicAnimation() {
             duration: 1000,
             useNativeDriver: true,
           }),
-          Animated.timing(micOpacityAnim, {
-            toValue: 0,
+          Animated.timing(micScaleAnim, {
+            toValue: 1,
             duration: 1000,
             useNativeDriver: true,
           }),
@@ -31,5 +31,5 @@ export function useMicAnimation() {
     }
   };
 
-  return { micScaleAnim, micOpacityAnim, micVisible, handleMicPress };
+  return { micScaleAnim, micVisible, handleMicPress };
 }

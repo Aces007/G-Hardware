@@ -50,36 +50,22 @@ export default StyleSheet.create({
     bottom: 0,
     marginBottom: 50,
   },
-button_circle: {
-  backgroundColor: '#A8F94F',
-  width: 60,
-  height: 60,
-  borderRadius: 30,
-  justifyContent: 'center',
-  alignItems: 'center',
-  zIndex: 1, // Keep mic button above the pulse
-},
-pulse_circle: {
-  position: 'absolute',
-  backgroundColor: '#53a5c5',
-  width: 60,
-  height: 60,
-  borderRadius: 30,
-  opacity: 0.5,
-  zIndex: 0, // Pulse effect below the button
-},
-
-  micContainer: {
-    position: 'relative',
+  button_circle: {
+    backgroundColor: '#A8F94F',
+    width: 60,
+    height: 60,
+    borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
+    zIndex: 1, // Keep mic button above the pulse
   },
-  micCircle: {
+  pulse_circle: {
     position: 'absolute',
-    height: 150,
-    width: 150,
     backgroundColor: '#53a5c5',
-    borderRadius: 75,
-    zIndex: 1,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    opacity: 0.5,
+    zIndex: 0, // Pulse effect below the button
   },
 });

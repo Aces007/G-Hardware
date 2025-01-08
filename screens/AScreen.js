@@ -1,50 +1,22 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import { View, TouchableOpacity, Image, Text, Animated } from 'react-native';
 import styles from '../styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useMicAnimation } from '../functions/MicHandlers';
 
 export default function AScreen({ navigation }) {
-  const [isAnimating, setIsAnimating] = useState(false); // Track animation state
-  const pulseAnim = useRef(new Animated.Value(1)).current; // Animation scale
-
-  const handleMicPress = () => {
-    if (isAnimating) {
-      // Stop animation
-      setIsAnimating(false);
-      pulseAnim.stopAnimation();
-      pulseAnim.setValue(1); // Reset scale
-    } else {
-      // Start animation
-      setIsAnimating(true);
-      Animated.loop(
-        Animated.sequence([
-          Animated.timing(pulseAnim, {
-            toValue: 2.5,
-            duration: 1000,
-            useNativeDriver: true,
-          }),
-          Animated.timing(pulseAnim, {
-            toValue: 1,
-            duration: 1000,
-            useNativeDriver: true,
-          }),
-        ])
-      ).start();
-    }
-  };
+  const { micScaleAnim, micVisible, handleMicPress } = useMicAnimation();
 
   return (
     <View style={styles.container}>
       <View style={styles.header_container}>
-        <Image
-          source={require('../assets/Logo.png')}
-          style={styles.logo}
-        />
+        <Image source={require('../assets/Logo.png')} style={styles.logo} />
         <Text style={styles.title}>G! Tara Na!</Text>
         <Text style={styles.subtitle}>
           Harmony Unleashed: Your Ultimate Guide to Guitar Chords!
         </Text>
       </View>
+
       <Image
         source={require('../assets/chords/majors/A Major.png')}
         style={styles.chordchart}
@@ -60,11 +32,11 @@ export default function AScreen({ navigation }) {
         {/* Microphone Button */}
         <View style={{ position: 'relative' }}>
           {/* Pulse Animation */}
-          {isAnimating && (
+          {micVisible && (
             <Animated.View
               style={[
                 styles.pulse_circle,
-                { transform: [{ scale: pulseAnim }] },
+                { transform: [{ scale: micScaleAnim }] },
               ]}
             />
           )}
