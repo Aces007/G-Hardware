@@ -6,7 +6,6 @@ export default StyleSheet.create({
     backgroundColor: '#0A0D17',
     alignItems: 'center',
     justifyContent: 'center',
-    
   },
   header_container: {
     position: 'absolute',
@@ -35,79 +34,52 @@ export default StyleSheet.create({
     fontSize: 25,
     color: '#CCCCCC',
     textAlign: 'center',
-    margin:10,
+    margin: 10,
   },
-
-  chordshapebuttons_container:{
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 20,
-    width: '80%',
-  },
-
-  chordshapebutton:{
-    backgroundColor: '#FFFFFF',
-    borderRadius: 10,
-    padding: 10,
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
-    shadowOffset: { width: 0, height: 3 },
-    width:'100%',
-    margin: 20,
-  },
-
-  chordshape_buttonText: {
-    fontSize: 40,
-    fontWeight: 'bold',
-    color: '#000',
-    textAlign:'center',
-  },
-
-  buttonsContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 20,
-  },
-
-  buttonText: {
-    fontSize: 70,
-    fontWeight: 'bold',
-    color: '#ffff',
-    textAlign:'center',
-  },
-
   chordchart: {
     height: '40%',
-    resizeMode: 'contain', // Ensures proper scaling of images
+    resizeMode: 'contain',
   },
-
-  carousel_container:{
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '80%' ,
-  },
-
   button_circle_container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '50%', // Adjust as needed
+    width: '50%',
     alignSelf: 'center',
     position: 'absolute',
     bottom: 0,
-    marginBottom:50,
+    marginBottom: 50,
   },
-  button_circle: {
-    backgroundColor: '#A8F94F',
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+button_circle: {
+  backgroundColor: '#A8F94F',
+  width: 60,
+  height: 60,
+  borderRadius: 30,
+  justifyContent: 'center',
+  alignItems: 'center',
+  zIndex: 1, // Keep mic button above the pulse
+},
+pulse_circle: {
+  position: 'absolute',
+  backgroundColor: '#53a5c5',
+  width: 60,
+  height: 60,
+  borderRadius: 30,
+  opacity: 0.5,
+  zIndex: 0, // Pulse effect below the button
+},
+
+  micContainer: {
+    position: 'relative',
     justifyContent: 'center',
     alignItems: 'center',
-  }
-}
-);
+  },
+  micCircle: {
+    position: 'absolute',
+    height: 150,
+    width: 150,
+    backgroundColor: '#53a5c5',
+    borderRadius: 75,
+    zIndex: 1,
+  },
+});

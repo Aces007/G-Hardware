@@ -1,17 +1,35 @@
+import { useRef, useState } from 'react';
 import { Animated } from 'react-native';
 
-// The function that handles the microphone button press animation
-export const handleMicPress = (micScaleAnim) => {
-  Animated.sequence([
-    Animated.timing(micScaleAnim, {
-      toValue: 1.5, // Scale up
-      duration: 500, // Half a second
-      useNativeDriver: true,
-    }),
-    Animated.timing(micScaleAnim, {
-      toValue: 1, // Scale back to original size
-      duration: 500, // Half a second
-      useNativeDriver: true,
-    }),
-  ]).start();
-};
+export function useMicAnimation() {
+  const micScaleAnim = useRef(new Animated.Value(1)).current;
+  const micOpacityAnim = useRef(new Animated.Value(0)).current;
+  const [micVisible, setMicVisible] = useState(false);
+
+  const handleMicPress = () => {
+    if (micVisible) {
+      // Stop animation
+      Animated.timing(micOpacityAnim).stop();
+      setMicVisible(false);
+    } else {
+      // Start pulse animation
+      setMicVisible(true);
+      Animated.loop(
+        Animated.sequence([
+          Animated.timing(micScaleAnim, {
+            toValue: 2.5,
+            duration: 1000,
+            useNativeDriver: true,
+          }),
+          Animated.timing(micOpacityAnim, {
+            toValue: 0,
+            duration: 1000,
+            useNativeDriver: true,
+          }),
+        ])
+      ).start();
+    }
+  };
+
+  return { micScaleAnim, micOpacityAnim, micVisible, handleMicPress };
+}
